@@ -1,0 +1,406 @@
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: #555555;
+}
+
+.editor {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+.toolbar {
+  width: 100%;
+  background: #eeeeee;
+}
+
+.toolbar-item {
+  padding: 15px;
+}
+
+.tool-label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-family: inherit;
+  font-size: inherit;
+  color: azure;
+}
+
+.tool-darklabel {
+  font-family: inherit !important;
+  font-size: inherit !important;
+  font-weight: normal !important;
+  font-size: inherit;
+}
+
+.tool-darklabel {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #000000;
+}
+
+.tool-input {
+  width: 100%;
+}
+
+.image-area {
+  flex-grow: 1;
+  overflow-y: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  margin-top: 56px;
+  background: #555555;
+  margin-bottom: 170px;
+}
+
+.image-area-light {
+  flex-grow: 1;
+  overflow-y: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  margin-top: 56px;
+  background: #686868;
+  margin-bottom: 170px;
+}
+
+#canvas {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#reset {
+  padding: 7px 14px;
+  border: 1px solid #A4A6B3;
+  border-radius: 162px;
+  color: #A4A6B3;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.4px;
+  background: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+}
+
+#reset:hover {
+  color: #F8F8F8;
+  border: 1px solid #F8F8F8;
+}
+
+#reset svg {
+  fill: #A4A6B3;
+  width: 20px;
+  height: 20px;
+}
+
+#reset:hover svg {
+  fill: #F8F8F8;
+}
+
+#delete,
+#download {
+  padding: 0;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+#delete svg {
+  fill: #A4A6B3;
+  width: 20px;
+  height: 20px;
+}
+
+#delete:hover svg {
+  fill: #F8F8F8;
+}
+
+#download svg {
+  stroke: #A4A6B3;
+  width: 20px;
+  height: 20px;
+  fill: none;
+}
+
+#download:hover svg {
+  stroke: #F8F8F8;
+}
+
+#share svg {
+  fill: #A4A6B3;
+  width: 20px;
+  height: 20px;
+}
+
+#share:hover svg {
+  fill: #F8F8F8;
+}
+
+#inputGroupFile02 {
+  max-width: 145px;
+  border: none !important;
+  background-color: #343a40 !important;
+  opacity: 0;
+}
+
+#inputFile-label {
+  background: #3751FF;
+  border-radius: 90px;
+  padding: 7px 14px;
+  color: #FFFFFF;
+}
+
+.btns {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar-dark {
+  transition: 0.3s;
+}
+
+.bg-light {
+  transition: 0.3s;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+#offcanvasDarkNavbarLabel {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.4px;
+  color: #FFFFFF;
+}
+
+#themetoggle {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.dropdown-toggle {
+  color: #dee2e6;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.dropdown-toggle:active {
+  color: #ffff;
+}
+
+.dropdown-toggle:hover {
+  color: #ffff;
+}
+
+#nav-top {
+  padding-right: 0 !important;
+}
+
+.dropdown-toggle:checked {
+  color: #ffff;
+}
+
+#dropdown-reg {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  gap: 5px;
+}
+
+#dropdown-menu {
+  margin-top: 15px;
+  --bs-dropdown-border-radius: none;
+  background-color: rgba(33, 37, 41) !important;
+}
+
+#loginBtn {
+  background: none;
+  border: none;
+}
+
+#registerBtn {
+  background: none;
+  border: none;
+}
+
+#logOutBtn {
+  background: none;
+  border: none;
+}
+
+#theme-titles {
+  display: flex;
+  gap: 5px;
+}
+
+#imgTheme {
+  padding-bottom: 8px;
+  padding-left: 8px;
+  transition: 0.3s;
+}
+
+#navbar-toggler {
+  color: rgba(255, 255, 255, 0.55) !important;
+  border: var(--bs-border-width) solid rgba(255, 255, 255, 0.1) !important;
+}
+
+#navbar-toggler:active {
+  color: rgba(255, 255, 255, 0.55) !important;
+  border: var(--bs-border-width) solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.text-center {
+  position: absolute;
+}
+
+#navbar-bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: start;
+}
+
+.nav-tabs {
+  --bs-nav-tabs-border-color: none !important;
+  --bs-nav-tabs-link-hover-border-color: none !important;
+}
+
+.bottomNav {
+  padding: 5px 15px;
+  color: #A4A6B3;
+}
+
+.bottomNav-light {
+  padding: 5px 15px;
+  color: black !important;
+  fill: #505055 !important;
+}
+
+.bottomNav-light:hover {
+  fill: black !important;
+}
+
+.presets-img {
+  width: 150px;
+  position: absolute;
+}
+
+.preset-btn {
+  position: absolute;
+  border: none;
+  background-color: #2125299c;
+  width: 150px;
+  color: #ffff;
+}
+
+.preset {
+  width: 150px;
+  height: 100px;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+#effects-toolbar-list {
+  padding: 22.5px 0px !important;
+}
+
+#rotate,
+#applyHflip,
+#applyVflip {
+  fill: #A4A6B3;
+  padding: 7px 14px;
+  border: none;
+  border-radius: 162px;
+  color: #A4A6B3;
+  font-size: inherit !important;
+  letter-spacing: 0.4px;
+  background: none;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  height: 100px;
+}
+
+#applyVflip:hover {
+  fill: #F8F8F8;
+  color: #F8F8F8;
+}
+
+#applyHflip:hover {
+  fill: #F8F8F8;
+  color: #F8F8F8;
+}
+
+#rotate:hover {
+  fill: #F8F8F8;
+  color: #F8F8F8;
+}
+
+.settings-svg {
+  width: 40px;
+}
+
+input,
+label,
+h6 {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#nav-bottom {
+  border-bottom: 1px solid #505055;
+  width: 100%;
+}
+
+.navbar-nav-light {
+  --bs-offcanvas-color: black !important;
+  color: black !important;
+}
+
+.userLabel-light {
+  --bs-offcanvas-color: black !important;
+  color: black !important;
+}
+
+#reset::after {
+  content: "Reset";
+  color: #A4A6B3;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.4px;
+}
+
+@media screen and (max-width: 340px) {
+  #reset::after {
+    content: none;
+  }
+
+  .btns {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+}

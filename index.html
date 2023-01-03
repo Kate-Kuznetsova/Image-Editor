@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+  <script src="node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="node_modules/@splidejs/splide/dist/css/splide-core.min.css">
+  <link rel="stylesheet" href="node_modules/@splidejs/splide/dist/css/splide.min.css">
+
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/slider.css">
+
+  <script defer src="js/main.js"></script>
+  <script defer src="js/slider.js"></script>
+  <script defer src="js/modal.js"></script>
+  <script defer src="js/theme.js"></script>
+  <script defer src="js/users.js"></script>
+
+  <title>Image Editor</title>
+</head>
+
+<body>
+  <div class="editor">
+    <nav id="navbar-top" class="navbar navbar-dark bg-dark fixed-top">
+      <div id="nav-top" class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
+          aria-controls="offcanvasDarkNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+          aria-labelledby="offcanvasDarkNavbarLabel">
+          <div id="offcanvas-header" class="offcanvas-header">
+            <div class="logo">
+              <img id="logo-icon" src="styles/images/logo-dark.svg" alt="" srcset="">
+            </div>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+              aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <p id="userLabel" class="nav-link active" aria-current="page" href="#"></p>
+              </li>
+
+              <li class="nav-item">
+                <div class="input-group mb-3" id="photoInput">
+                  <label for="inputGroupFile02" id="inputFile-label">Select file</label>
+                  <input type="file" name="inputGroupFile02" class="form-control" id="inputGroupFile02">
+                </div>
+              </li>
+
+              <li class="nav-item" id="themetoggle">
+                <div id="theme-titles">
+                  <h6 id="theme-title">Light</h6>
+                  <h6>theme</h6>
+                  <img id="imgTheme" src="styles/images/sun.svg" alt="" srcset="">
+                </div>
+
+              </li>
+
+              <li class="nav-item">
+                <a id="faq" class="nav-link active" href="faq.html">FAQ</a>
+              </li>
+
+              <li class="nav-item">
+                <a id="contact" class="nav-link active" href="contacts.html">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="btns">
+          <button id="reset">
+            <svg id="resetImg">
+              <use xlink:href="styles/images/reset_icon.svg#reset"></use>
+            </svg>
+          </button>
+          <a id="delete">
+            <svg>
+              <use xlink:href="styles/images/delete.svg#delete"></use>
+            </svg>
+          </a>
+          <a id="download">
+            <svg>
+              <use xlink:href="styles/images/upload.svg#upload"></use>
+            </svg>
+          </a>
+
+          <div class="dropdown" id="navbarNavDarkDropdown">
+            <a id="dropdown-reg" class="nav-link nav-link-secondary dropdown-toggle" href="#" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="styles/images/user-icon.svg" alt="">
+            </a>
+            <ul id="dropdown-menu" class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
+              <li>
+                <div class="newUserPanel">
+                  <button type="button" id="loginBtn" class="btn btn-outline-secondary" data-bs-toggle="modal"
+                    data-bs-target="#logIin">Sign In</button>
+
+                  <button type="button" id="registerBtn" class="btn btn-outline-secondary" data-bs-toggle="modal"
+                    data-bs-target="#register">Sign Up</button>
+                </div>
+              </li>
+              <li>
+                <div class="UserPanel">
+                  <button type="button" id="logOutBtn" class="btn btn-outline-secondary" data-bs-toggle="modal"
+                    data-bs-target="#logOut">Log Out</button>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Modal -->
+    <div class="modal fade" id="logIin" tabindex="-1" aria-labelledby="logIinModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered ">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="logIinModalLabel">Log in to continue</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form action="javascript:" id="loginForm" class="needs-validation" novalidate>
+              <div class="mb-3">
+                <input type="text" class="form-control" name="nameInput" aria-describedby="nameHelp"
+                  placeholder="Username" required>
+                <div class="invalid-feedback">
+                  Please provide a valid name.
+                </div>
+              </div>
+              <div class="mb-3">
+                <input type="email" class="form-control" name="emailnput" aria-describedby="emailHelp"
+                  placeholder="Email" required>
+                <div class="invalid-feedback">
+                  Please provide a valid email.
+                </div>
+              </div>
+              <div class="mb-3">
+                <input type="password" class="form-control" name="passwordInput" placeholder="Password" required>
+                <div class="invalid-feedback">
+                  Please provide a valid password.
+                </div>
+              </div>
+              <button type="submit" class="btn btn-success">Login</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="register" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered ">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="registerModalLabel">Create your Account</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form action="javascript:" id="regForm" class="needs-validation" novalidate>
+              <div class="mb-3">
+                <input type="text" class="form-control" name="nameInputReg" aria-describedby="nameHelp"
+                  placeholder="Username" required>
+                <div class="invalid-feedback">
+                  Please provide a valid name.
+                </div>
+              </div>
+              <div class="mb-3">
+                <input type="email" class="form-control" name="emailnputReg" aria-describedby="emailHelp"
+                  placeholder="Email" required>
+                <div class="invalid-feedback">
+                  Please provide a valid email.
+                </div>
+              </div>
+              <div class="mb-3">
+                <input type="password" class="form-control" name="passwordInputReg" placeholder="Password" required>
+                <div class="invalid-feedback">
+                  Please provide a valid password.
+                </div>
+              </div>
+              <button type="submit" class="btn btn-success">Create Account</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="navbar navbar-dark bg-dark fixed-bottom" id="navbar-bottom">
+      <ul id="nav-bottom" class="nav nav-tabs">
+        <hr>
+
+        <li class="nav-item">
+          <a id="effects" class="nav-link bottomNav" aria-current="page" href="#">Effects</a>
+        </li>
+        <li class="nav-item">
+          <a id="presets" class="nav-link bottomNav" aria-current="page" href="#">Presets</a>
+        </li>
+        <li class="nav-item">
+          <a id="settings" class="nav-link bottomNav" aria-current="page" href="#">Settings</a>
+        </li>
+      </ul>
+      <section class="splide" id="effects-toolbar">
+        <div class="splide__track">
+          <ul class="splide__list">
+            <li class="splide__slide">
+              <label for="brightness" id="brightness-label" class="toolbar-label">Brightness</label>
+              <input type="range" id="brightness" class="toolbar-input" min="0" max="200">
+            </li>
+
+            <li class="splide__slide">
+              <label for="saturation" id="saturation-label" class="toolbar-label">Saturation</label>
+              <input type="range" id="saturation" class="toolbar-input" min="0" max="200">
+            </li>
+
+            <li class="splide__slide">
+              <label for="blur" id="blur-label" class="toolbar-label">Blur</label>
+              <input type="range" id="blur" class="toolbar-input" min="0" max="25">
+            </li>
+
+            <li class="splide__slide">
+              <label for="inversion" id="inversion-label" class="toolbar-label">Inversion</label>
+              <input type="range" id="inversion" class="toolbar-input" min="0" max="100">
+            </li>
+
+            <li class="splide__slide">
+              <label for="contrast" id="contrast-label" class="toolbar-label">Contrast</label>
+              <input type="range" id="contrast" class="toolbar-input" min="0" max="200">
+            </li>
+
+            <li class="splide__slide">
+              <label for="grayscale" id="grayscale-label" class="toolbar-label">Grayscale</label>
+              <input type="range" id="grayscale" class="toolbar-input" min="0" max="100">
+            </li>
+
+            <li class="splide__slide">
+              <label for="hue-rotate" id="hue-rotate-label" class="toolbar-label">Hue-rotate</label>
+              <input type="range" id="hue-rotate" class="toolbar-input" min="-360" max="360">
+            </li>
+
+            <li class="splide__slide">
+              <label for="sepia" id="sepia-label" class="toolbar-label">Sepia</label>
+              <input type="range" id="sepia" class="toolbar-input" min="0" max="100">
+            </li>
+
+          </ul>
+        </div>
+      </section>
+
+      <section class="splide" id="presets-toolbar">
+        <div class="splide__track">
+          <ul class="splide__list">
+            <li class="splide__slide">
+              <div id="grayscale01" class="preset">
+                <img class="presets-img" src="styles/images/presets/grayscale01.png" alt="grayscale01Img">
+                <button class="preset-btn" type="button">Grayscale 01</button>
+              </div>
+            </li>
+
+            <li class="splide__slide">
+              <div id="smoke" class="preset">
+                <img class="presets-img" src="styles/images/presets/smoke.png" alt="smokeImg">
+                <button class="preset-btn" type="button">Smoke</button>
+              </div>
+            </li>
+
+            <li class="splide__slide">
+              <div id="bright-noon" class="preset">
+                <img class="presets-img" src="styles/images/presets/bright-noon.png" alt="bright-noonImg">
+                <button class="preset-btn" type="button">Bright noon</button>
+              </div>
+            </li>
+
+            <li class="splide__slide">
+              <div id="modern" class="preset">
+                <img class="presets-img" src="styles/images/presets/modern.png" alt="modernImg">
+                <button class="preset-btn" type="button">Modern</button>
+              </div>
+            </li>
+
+            <li class="splide__slide">
+              <div id="vintage01" class="preset">
+                <img class="presets-img" src="styles/images/presets/vintage01.png" alt="vintage01Img">
+                <button class="preset-btn" type="button">Vintage 01</button>
+              </div>
+            </li>
+
+            <li class="splide__slide">
+              <div id="vintage02" class="preset">
+                <img class="presets-img" src="styles/images/presets/vintage02.png" alt="vintage02Img">
+                <button class="preset-btn" type="button">Vintage 02</button>
+              </div>
+            </li>
+
+            <li class="splide__slide">
+              <div id="vintage03" class="preset">
+                <img class="presets-img" src="styles/images/presets/vintage03.png" alt="vintage03Img">
+                <button class="preset-btn" type="button">Vintage 03</button>
+              </div>
+            </li>
+
+            <li class="splide__slide">
+              <div id="movie" class="preset">
+                <img class="presets-img" src="styles/images/presets/vintage03.png" alt="vintage04Img">
+                <button class="preset-btn" type="button">Movie</button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="splide" id="settings-toolbar">
+        <div class="splide__track">
+          <ul class="splide__list">
+            <li class="splide__slide">
+              <div class="preset">
+                <button id="rotate">Rotate
+                  <svg class="settings-svg">
+                    <use xlink:href="styles/images/Rotate-R.svg#rotate"></use>
+                  </svg>
+                </button>
+              </div>
+            </li>
+
+            <li class="splide__slide">
+              <div class="preset">
+                <button id="applyHflip">Hflip
+                  <svg class="settings-svg">
+                    <use xlink:href="styles/images/hFlip.svg#Hflip"></use>
+                  </svg>
+                </button>
+              </div>
+            </li>
+
+            <li class="splide__slide">
+              <div class="preset">
+                <button id="applyVflip">Vflip
+                  <svg class="settings-svg">
+                    <use xlink:href="styles/images/vflip.svg#Vflip"></use>
+                  </svg>
+                </button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </nav>
+
+    <div id="image-area" class="image-area">
+      <div class="text-center">
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+      <canvas crossorigin="anonymous" id="canvas"></canvas>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="node_modules/@splidejs/splide/dist/js/splide.min.js"></script>
+</body>
+
+</html>

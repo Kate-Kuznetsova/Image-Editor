@@ -1,0 +1,88 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.faq-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.accordion{
+    max-width: 700px;
+}
+
+.accordion-button{
+    width: 700px ;  
+}
+
+.accordion-button:hover{
+    border: #A4A6B3 1px solid;
+}
+.accordion-button:not(.collapsed){
+    background-color: none !important;
+}
+
+h1{
+font-size: 30px;
+}
+
+.navbar{
+    width: 100%;
+}
+
+.btn{
+    color: #A4A6B3;
+}
+
+.btn:hover{
+    color: #F8F8F8;
+}
+
+
+@media screen and (max-width: 700px)  and (min-width: 600px) {
+    .accordion{
+        max-width: 600px;
+    }
+    .accordion-button{
+        width: 600px;  
+    } 
+}
+
+@media screen and (max-width: 600px)  and (min-width: 500px) {
+    .accordion{
+        max-width: 500px;
+    }
+    .accordion-button{
+        width: 500px;  
+    } 
+}
+
+@media screen and (max-width: 500px)  and (min-width: 400px) {
+    .accordion{
+        max-width: 400px;
+    }
+    .accordion-button{
+        width: 400px;  
+    } 
+}
+
+@media screen and (max-width: 400px)  and (min-width: 300px) {
+    .accordion{
+        max-width: 300px;
+    }
+    .accordion-button{
+        width: 300px;  
+    } 
+}
+
+@media screen and (max-width: 300px)  and (min-width: 200px) {
+    .accordion{
+        max-width: 200px;
+    }
+    .accordion-button{
+        width: 200px;  
+    } 
+}

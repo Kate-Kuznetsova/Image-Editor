@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="styles/contacts.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="contact-container">
+        <div class="left-col">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4491.104205481623!2d31.30201159980144!3d51.487329371788576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46d548ef5878f6ad%3A0x23b60a9b56f78dc4!2sSt.%20Catherine&#39;s%20Cathedral!5e0!3m2!1sru!2sua!4v1666125865723!5m2!1sru!2sua"
+                width="600" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="right-col">
+
+            <h1>Contact us</h1>
+            <form id="contact-form" method="post">
+                <form action="javascript:" id="logIinForm" class="needs-validation" novalidate>
+                    <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+                    <!-- <label for="email">Email Address</label> -->
+                    <input type="email" id="email" name="email" placeholder="Your Email Address" required>
+                    <!-- <label for="message">Message</label> -->
+                    <textarea rows="6" placeholder="Your Message" id="message" name="message" required></textarea>
+                    <button type="submit" id="submit" name="submit">Send</button>
+                  </form>
+            </form>
+            <div id="error"></div>
+            <div id="success-msg"></div>
+<!-- 
+            <div class="socials">
+                <ul class="socials-list">
+                    <li class="social">
+                        <img src="styles/images/google.svg" alt="google">
+                    </li>
+    
+                    <li class="social">
+                        <img src="styles/images/facebook.svg" alt="facebook">
+                    </li>
+    
+                    <li class="social">
+                        <img src="styles/images/instagram.svg" alt="instagram">
+                    </li>
+    
+                    <li class="social">
+                        <img src="styles/images/telegram.svg" alt="telegram">
+                    </li>
+                </ul>
+            </div> -->
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="node_modules/@splidejs/splide/dist/js/splide.min.js"></script>
+</body>
+
+</html>
