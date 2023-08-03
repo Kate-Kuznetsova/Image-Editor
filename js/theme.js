@@ -37,7 +37,7 @@ if (localStorage.theme == 'light') setLightMode()
 
 function setDarkMode() {
     imgTheme.src = './styles/images/moon.svg'
-    logoIcon.src = '../styles/images/logo-dark.svg'
+    logoIcon.src = './styles/images/logo-dark.svg'
     themeTitle.innerText = 'Dark'
 
 
@@ -87,8 +87,8 @@ function setDarkMode() {
 }
 
 function setLightMode() {
-    imgTheme.src = '../styles/images/sun.svg'
-    logoIcon.src = '../styles/images/logo-light.svg'
+    imgTheme.src = './styles/images/sun.svg'
+    logoIcon.src = './styles/images/logo-light.svg'
     themeTitle.innerText = 'Light'
 
 
