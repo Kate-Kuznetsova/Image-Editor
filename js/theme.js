@@ -27,8 +27,7 @@ const imageArea = document.querySelector('#image-area')
 // const userLabel = document.querySelector('#userLabel')
 
 
-toggleThemeBtn.addEventListener('click', (event) => {
-    event.preventDefault();
+toggleThemeBtn.addEventListener('click', () => {
     if (navbarBottom.classList.contains('bg-light')) setLightMode()
     else setDarkMode()
 })
@@ -37,7 +36,7 @@ if (localStorage.theme == 'dark') setDarkMode()
 if (localStorage.theme == 'light') setLightMode()
 
 function setDarkMode() {
-    imgTheme.src = '../styles/images/moon.svg'
+    imgTheme.src = './styles/images/moon.svg'
     logoIcon.src = '../styles/images/logo-dark.svg'
     themeTitle.innerText = 'Dark'
 
