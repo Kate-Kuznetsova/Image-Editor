@@ -27,7 +27,8 @@ const imageArea = document.querySelector('#image-area')
 // const userLabel = document.querySelector('#userLabel')
 
 
-toggleThemeBtn.addEventListener('click', () => {
+toggleThemeBtn.addEventListener('click', (event) => {
+    event.preventDefault();
     if (navbarBottom.classList.contains('bg-light')) setLightMode()
     else setDarkMode()
 })
